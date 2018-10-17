@@ -17,19 +17,15 @@ describe('sign', () => {
     expect(sign(0)).toBe(0);
   });
 
-  test('sign of -0 is -0', () => {
-    expect(sign(-0)).toBe(-0);
-  });
-
   test('sign of NaN is NaN', () => {
-    expect(sign(NaN)).toBe(NaN);
+    expect(isNaN(sign(NaN))).toBe(true);
   });
 
   test('sign of "foo" is NaN', () => {
-    expect(sign("foo")).toBe(NaN);
+    expect(isNaN(sign("foo"))).toBe(true);
   });
 
   test('sign of nothing is NaN', () => {
-    expect(sign()).toBe(NaN);
+    expect(isNaN(sign())).toBe(true);
   });
 });
